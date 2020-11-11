@@ -73,4 +73,3 @@ val encoded = encodeString("foo")
 //Output: true
 //All 'e' in the input string are before all 'r'.
 val input = "engineers rock"
-val pat

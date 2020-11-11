@@ -17,3 +17,5 @@ map.put(s1.getName,s1)
 s1.setName("new")
 
 println(map.get(key).map(_.name))
+
+ List("hot","dot","dog","lot","log","cog").permutations.toList.last
