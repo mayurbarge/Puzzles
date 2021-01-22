@@ -1,9 +1,9 @@
 package dp.knapsack
 
 object RecursiveMemoized extends App {
-  val wt = Array[Int](1,3,4,5)
-  val values = Array[Int](1,3,5,7)
-  val W = 7
+  val wt = Array[Int](1,3,4,5) // weight of items
+  val values = Array[Int](1,3,5,7) // prices of items
+  val W = 7 // knapsack can hold 7 kg
 
   var dp: Array[Array[Int]] = Array.ofDim[Int](wt.size + 1, W+1)
 

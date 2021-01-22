@@ -44,3 +44,13 @@ List(1,2,3,4).foldLeft( initalValue )((acc,e)=>{
 })
 
 List(1,2,3,4)
+
+def tailRecFactorial(number:Int): Int = {
+  def go(current: Int, acc: Int):Int = {
+    if(current == number)
+      acc
+    else go(current+1, acc * )
+  }
+  go(1, number)
+}
+tailRecFactorial(5)

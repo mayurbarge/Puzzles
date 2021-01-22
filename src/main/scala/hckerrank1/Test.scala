@@ -17,7 +17,7 @@ import scala.sys._
 import scala.util.matching._
 import scala.reflect._
 
-object Result1 {
+object Result1 extends App{
   /*
   Given an integer, if number is prime return 1. Otherwise return its smallest divisor greater than 1.
   e.g. 2 is a  prime => 1
@@ -38,19 +38,25 @@ object Result1 {
     }
     recurse(n, n/2, scala.collection.immutable.List.empty[Long])
   }
-}
 
-object Solution1 {
-  def main(args: Array[String]) {
-
-    val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
-
-    val n = StdIn.readLine.trim.toLong
-
-    val result = Result1.isPrime(n)
-
-    printWriter.println(result)
-
-    printWriter.close()
+  def isPrime2(n:Int): Int = {
+    if(n ==1 || n==2) return 1
+    def go(start:Int, end : Int, result:Int): Int = {
+      if(result==0) return result
+      if(n/2 == end) result
+      else go(start-1, end+1, n%start)
+    }
+    go(n/2, 1, 1)
   }
+
+  println(isPrime2(1))
+  println(isPrime2(2))
+  println(isPrime2(3))
+  println(isPrime2(4))
+  println(isPrime2(5))
+  println(isPrime2(6))
+  println(isPrime2(21))
+  println(isPrime2(531))
+  println(isPrime2(37))
+
 }
