@@ -28,7 +28,8 @@ output:
     Array.empty
   }
 
-  def twoPointersWithAllParis(array: Array[Int], sum: Int): Array[(Int,Int)] = {
+  // return all pairs matching sum
+  def twoPointersWithAllPairs(array: Array[Int], sum: Int): Array[(Int,Int)] = {
     var p = 0
     var q = array.size-1
     var result = Array.empty[(Int,Int)]
@@ -51,5 +52,5 @@ output:
   }
 
   println(twoPointers(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 7).toList)
-  println(twoPointersWithAllParis(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 7).toList)
+  println(twoPointersWithAllPairs(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 7).toList)
 }

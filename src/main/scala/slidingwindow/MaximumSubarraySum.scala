@@ -3,7 +3,7 @@ package slidingwindow
 object MaximumSum extends App {
   /*
   // This is not DP as we only need to find sum in the output
-  if we want to find subset of the array having sum 6 then its DP
+  if we want to find subset of the array having sum 6 then its DP, word contiguous means its sliding window
 
 
   Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
@@ -43,27 +43,25 @@ Output: -1
       }
     })
     }
-
-    // Kadane's algorithm
-    def approach3(nums:  Array[Int]) = {
-      var ans = nums(0)
-      var subarr_sum = nums(0)
-
-      for (i <- (1 to nums.size-1)) {
-        subarr_sum = Math.max(nums(i), nums(i) + subarr_sum)
-        ans = Math.max(ans, subarr_sum)
-      }
-       ans
-    }
-       println(x._2)
+    println(x._2)
     println(x._1.toList)
-
-    println(approach3(nums))
-
-    0
-
+    x._2
   }
 
+  // Kadane's algorithm
+  def approach3(nums:  Array[Int], k:  Int) = {
+    var ans = nums(0)
+    var subarr_sum = nums(0)
+
+    for (i <- (1 to nums.size-1)) {
+      subarr_sum = Math.max(nums(i), nums(i) + subarr_sum)
+      ans = Math.max(ans, subarr_sum)
+    }
+    ans
+  }
+
+
+  println(approach3(Array(-2, 1, -3, 4, -1, 2, 1, -5, 4), 4))
   println(maxSubArray(Array(-2, 1, -3, 4, -1, 2, 1, -5, 4)))
 
 }

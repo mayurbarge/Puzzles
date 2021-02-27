@@ -45,7 +45,27 @@ object FibonacciStepsCounter extends App {
   //https://blog.genuine.com/2019/05/fibonacci-in-scala-tailrec-memoized/
   // this is memoized implementation
   println("@@@@@@@@@@@@@@@")
-  val myFib: LazyList[BigInt] = BigInt(0) #:: BigInt(1) #:: myFib.zip(myFib.tail).map(e => e._1 + e._2)
-  println(myFib(6))
+  //val myFib: LazyList[BigInt] = BigInt(0) #:: BigInt(1) #:: myFib.zip(myFib.tail).map(e => e._1 + e._2)
+  //println(myFib(6))
 
+}
+
+object Practice extends  App {
+  def fibonacci(m:Int): Int = {
+
+    def go(ith:Int, iith: Int, index:Int):Int = {
+      if(index == 0) {
+        ith
+      }
+      else go(iith, ith + iith, index-1)
+    }
+    go(0, 1,m)
+  }
+
+  println(fibonacci(0))
+  println(fibonacci(1))
+  println(fibonacci(2))
+  println(fibonacci(3))
+  println(fibonacci(4))
+  println(fibonacci(5))
 }

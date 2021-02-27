@@ -3,6 +3,6 @@ def checkAnagram(string1: String, string2: String) = {
 
   A += ('I' -> 1)
 
-  val z = string1.toList.groupMapReduce(_)(_ => 1)(_ + _)
-println(z)
+ // val z = string1.toList.groupMapReduce(_)(_ => 1)(_ + _)
+//println(z)
 }

@@ -33,24 +33,28 @@ If we started at the first tree, we would only collect [1, 2].
    3332211133
    */
 
-  def totalFruit(tree: Array[Int]): Int = {
+  def totalFruit[T](tree: Array[T], init: T): Int = {
     var max, current_max = 0
-    var last_fruit_count, second_last_fruit_count = 0
-    var last_tree, second_last_tree = -1
+    var last_fruit_count = 0
+    var last_tree, second_last_tree = init
 
     for(i <- 0 to tree.size -1) {
+      // these three steps r independent
+      // update max
       if(tree(i) == last_tree || tree(i) == second_last_tree) {
         current_max += 1
       } else {
         current_max = last_fruit_count + 1
       }
 
+      // update last  tree counts
       if(tree(i)==last_tree) {
         last_fruit_count += 1
       } else {
         //new fruit
         last_fruit_count = 1
       }
+      // update trees
       if(tree(i) != last_tree) {
         second_last_tree = last_tree
         last_tree = tree(i)
@@ -61,6 +65,7 @@ If we started at the first tree, we would only collect [1, 2].
     max
   }
 
-  println(totalFruit(Array(1,2,1)))
+  println(totalFruit[Int](Array(1,2,1), -1))
+  println(totalFruit[Char](Array('A','B','C','B','B','C'), 'L'))
 
 }

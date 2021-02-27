@@ -5,9 +5,9 @@ object Array01 extends App {
     Example:
     Input: [3,2,4,3], Output: false Input:[1, 4, 2, 3], Output: true Input:[4, 3, 2], Output: false Input:[1, 2, 3], Output: true
    */
-  def nonDecreasingArray(array: Array[Int]): Boolean = {
-    (array lazyZip array.drop(1)).filter((a, b) => a > b).size <= 1 //fails for 3,4,2,3
-  }
+/*  def nonDecreasingArray(array: Array[Int]): Boolean = {
+  //  (array lazyZip array.drop(1)).filter((a, b) => a > b).size <= 1 //fails for 3,4,2,3
+  }*/
 
   /*
     Determine whether a circular array with magic indexes contains a full circle. The array is circular in the sense that,
